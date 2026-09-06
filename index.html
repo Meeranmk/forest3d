@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Naturic Greenery Mountain — 3D Experience</title>
+  <meta name="description" content="An immersive, real-time 3D mountainous landscape with procedural terrain, lush vegetation, and dynamic atmospheric effects built with Three.js." />
+  <meta name="theme-color" content="#1a2f1a" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/src/styles.css" />
+</head>
+<body>
+  <!-- Loading Overlay -->
+  <div id="loading-overlay">
+    <div class="loader-content">
+      <div class="loader-icon">
+        <svg width="64" height="64" viewBox="0 0 64 64" fill="none">
+          <path d="M32 4L8 56h48L32 4z" fill="none" stroke="url(#grad)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M20 56l8-16 6 10 8-20 10 26" fill="none" stroke="url(#grad)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" opacity="0.6"/>
+          <defs>
+            <linearGradient id="grad" x1="0" y1="0" x2="64" y2="64">
+              <stop offset="0%" stop-color="#6fcf97"/>
+              <stop offset="100%" stop-color="#2d9b4e"/>
+            </linearGradient>
+          </defs>
+        </svg>
+      </div>
+      <h1 class="loader-title">Naturic</h1>
+      <p class="loader-subtitle">Preparing your mountain experience…</p>
+      <div class="progress-track">
+        <div class="progress-fill" id="progress-fill"></div>
+      </div>
+      <p class="progress-text" id="progress-text">0%</p>
+    </div>
+  </div>
+
+  <!-- UI Controls -->
+  <div id="ui-controls" class="hidden">
+    <div class="control-group">
+      <label class="control-label">Lighting</label>
+      <div class="button-row" id="lighting-buttons">
+        <button class="mode-btn active" data-mode="day" id="btn-day">
+          <span class="btn-icon">☀️</span> Day
+        </button>
+        <button class="mode-btn" data-mode="golden" id="btn-golden">
+          <span class="btn-icon">🌅</span> Golden
+        </button>
+        <button class="mode-btn" data-mode="night" id="btn-night">
+          <span class="btn-icon">🌙</span> Night
+        </button>
+      </div>
+    </div>
+    <div class="control-group">
+      <label class="control-label">
+        <input type="checkbox" id="reduce-motion" />
+        <span class="checkbox-custom"></span>
+        Reduce Motion
+      </label>
+    </div>
+  </div>
+
+  <!-- Info Badge -->
+  <div id="fps-badge" class="hidden">
+    <span id="fps-value">60</span> FPS
+  </div>
+
+  <canvas id="scene-canvas"></canvas>
+
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>
