@@ -2,10 +2,12 @@
 
 A high-performance WebGL 3D nature experience built with **Three.js**, **Vite**, and custom **GLSL Shaders**, integrated with a **Blender 3D export pipeline**.
 
+🔗 **Live Demo**: [https://forest3d-eta.vercel.app/](https://forest3d-eta.vercel.app/)
+
 ![Three.js](https://img.shields.io/badge/Three.js-r185-black?logo=three.js)
-![Vite](https://img.shields.io/badge/Vite-v8-blueviolet?logo=vite)
+![Vite](https://img.shields.io/badge/Vite-v6-blueviolet?logo=vite)
+![Vercel](https://img.shields.io/badge/Deployed-Vercel-black?logo=vercel)
 ![GLSL](https://img.shields.io/badge/Shaders-GLSL-orange)
-![Blender](https://img.shields.io/badge/Pipeline-Blender-orange?logo=blender)
 
 ---
 
