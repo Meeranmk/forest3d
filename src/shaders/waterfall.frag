@@ -30,9 +30,9 @@ void main() {
   vec3 normal = normalize(vNormal);
 
   // Fast downward flow coordinates (scaled for wide majestic waterfall)
-  vec2 flowUV1 = vec2(vUv.x * 14.0, vUv.y * 3.0 - uTime * 3.4);
-  vec2 flowUV2 = vec2(vUv.x * 24.0 + 0.5, vUv.y * 5.0 - uTime * 5.0);
-  vec2 microUV = vec2(vUv.x * 45.0, vUv.y * 12.0 - uTime * 7.0);
+  vec2 flowUV1 = vec2(vUv.x * 14.0, vUv.y * 3.0 + uTime * 3.4);
+  vec2 flowUV2 = vec2(vUv.x * 24.0 + 0.5, vUv.y * 5.0 + uTime * 5.0);
+  vec2 microUV = vec2(vUv.x * 45.0, vUv.y * 12.0 + uTime * 7.0);
 
   float n1 = noise2D(flowUV1);
   float n2 = noise2D(flowUV2);
@@ -83,7 +83,7 @@ void main() {
 
   // Opacity: sheer water stream with solid foam
   float alpha = mix(0.78, 0.98, totalFoam);
-  alpha *= smoothstep(0.0, 0.04, vUv.y); // Fade gently at top edge
+  alpha *= smoothstep(0.0, 0.04, vUv.y) * smoothstep(1.0, 0.96, vUv.y); // Fade gently at crest and impact edges
 
   // Distance fog integration (crisp up close, blends at horizon)
   float dist = length(cameraPosition - vWorldPosition);

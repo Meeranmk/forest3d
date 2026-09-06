@@ -6,7 +6,7 @@ varying vec3 vWorldPosition;
 
 // Simple wave function for waterfall surface disturbance
 float wave(vec2 p) {
-  return sin(p.x * 12.0 + uTime * 6.0) * cos(p.y * 15.0 - uTime * 8.0) * 0.04;
+  return sin(p.x * 12.0 + uTime * 6.0) * cos(p.y * 15.0 + uTime * 8.0) * 0.04;
 }
 
 void main() {
